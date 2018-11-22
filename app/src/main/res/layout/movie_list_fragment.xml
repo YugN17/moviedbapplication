@@ -1,0 +1,26 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.MovieFragment">
+
+    <data class="MovieListFragmentBinding">
+
+        <variable
+            name="viewModel"
+            type="com.soulkitchen.serifenuruysal.movieapp.viewModel.MovieListViewModel" />
+
+    </data>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvMostPopular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:addItemDecoration="@{viewModel.decoration}"
+        android:clipToPadding="false"
+        app:nestedScrollingEnabled="@{false}"
+        android:setAdapter="@{viewModel.getAdapter(@layout/row_movie)}"
+        android:setLayoutManager="@{viewModel.layoutManager}" />
+
+</layout>
